@@ -1,5 +1,4 @@
 HELP.md
-README.md
 src/main/resources/application.yml
 src/main/resources/application-oauth.yml
 .gradle
@@ -38,5 +37,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-README.md
