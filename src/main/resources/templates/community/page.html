@@ -131,7 +131,7 @@
                                         <div class="post-9">
                                             <div>
                                                 <img alt="" width="40" height="40"
-                                                     th:src="${experience.filePath}"
+                                                     th:src="${experience.filePath != null ? experience.filePath : '/images/member/profile.png'}"
                                                      style="color: transparent; border-radius: 999px; cursor: pointer; max-height: 40px; max-width: 40px; min-height: 40px; min-width: 40px; object-fit: contain;">
                                             </div>
                                             <div class="post-10">
