@@ -149,7 +149,6 @@ public class InternRestController implements InternRestControllerDocs {
         request.setRequestInternMemberName(requestInternDTO.getRequestInternMemberName());
         request.setRequestInternMemberEmail(requestInternDTO.getRequestInternMemberEmail());
         request.setRequestInternMemberPhone(requestInternDTO.getRequestInternMemberPhone());
-        request.setEvaluationId(requestInternDTO.getEvaluationId());
         if(requestInternDTO.getRequestInternMemberUrl()!=null){
             request.setRequestInternMemberUrl(requestInternDTO.getRequestInternMemberUrl());
         }
@@ -163,7 +162,7 @@ public class InternRestController implements InternRestControllerDocs {
     //    평가 있는지 여부
     @GetMapping("/is-reviewed")
     public boolean isRequested(@AuthenticationPrincipal CustomUserDetails customUserDetails) {
-        boolean result=evaluationService.isReviewed(customUserDetails.getId());
+        boolean result = evaluationService.isReviewed(customUserDetails.getId());
         return result;
     }
 }
