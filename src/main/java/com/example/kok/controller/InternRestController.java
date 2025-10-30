@@ -149,6 +149,7 @@ public class InternRestController implements InternRestControllerDocs {
         request.setRequestInternMemberName(requestInternDTO.getRequestInternMemberName());
         request.setRequestInternMemberEmail(requestInternDTO.getRequestInternMemberEmail());
         request.setRequestInternMemberPhone(requestInternDTO.getRequestInternMemberPhone());
+        request.setEvaluationId(requestInternDTO.getEvaluationId());
         if(requestInternDTO.getRequestInternMemberUrl()!=null){
             request.setRequestInternMemberUrl(requestInternDTO.getRequestInternMemberUrl());
         }

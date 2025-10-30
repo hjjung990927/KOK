@@ -26,3 +26,5 @@ create table tbl_request_intern
     request_intern_member_url   varchar(255),
     request_intern_active       status         default 'active'::status        not null
 );
+
+select * from tbl_evaluation;

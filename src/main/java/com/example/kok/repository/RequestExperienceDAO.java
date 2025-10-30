@@ -12,12 +12,12 @@ import java.util.List;
 public class RequestExperienceDAO {
     private final RequestExperienceMapper requestExperienceMapper;
 
-//    지원서 추가
+    //    지원서 추가
     public void applyForExperience(RequestExperienceDTO requestExperienceDTO){
         requestExperienceMapper.insertRequest(requestExperienceDTO);
     }
 
-//    회원별 지원서 조회
+    //    회원별 지원서 조회
     public List<RequestExperienceDTO> selectAllRequestById(Long id){
         return requestExperienceMapper.selectRequestById(id);
     }
@@ -25,7 +25,7 @@ public class RequestExperienceDAO {
     public List<RequestExperienceDTO> selectAllRequestByUserId(Long id,Long experienceId){
         return requestExperienceMapper.selectRequestByUserId(id,experienceId);
     }
-//    지원 여부 판별
+    //    지원 여부 판별
     public boolean isRequested(RequestExperienceDTO requestExperienceDTO){
         Long experienceNoticeId=requestExperienceDTO.getExperienceNoticeId();
         Long memberId = requestExperienceDTO.getMemberId();
@@ -35,5 +35,10 @@ public class RequestExperienceDAO {
         } else{
             return false;
         }
+    }
+
+    //    지원서 id 조회
+    public Long findId(Long memberId, Long experienceId){
+        return requestExperienceMapper.selectId(memberId, experienceId);
     }
 }
