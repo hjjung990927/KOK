@@ -6,15 +6,25 @@ KOK은 기업의 단기 공백(휴가, 연차, 출장 등)으로 생긴 빈자�
 체험을 통해 인턴십 또는 정식 채용으로 연계될 수 있으며,
 회원 간 커뮤니티로 경험을 공유하고 성장하는 생태계를 지향합니다.
 
+<img width="602" height="305" alt="서비스소개" src="https://github.com/user-attachments/assets/fc058dfc-4f48-4d35-99fe-c2c4c30f4b84" />
+
+<br>
+
 ## 🕰️ 개발 기간
 
 -   25.09.19일 - 25.10.12일
+
+<br>
 
 ## ✨ 기획배경
 
 청년층 고용 감소와 쉬었음 인구 증가로 체감 취업난이 심화되고 있습니다. <br>
 기업은 경력직을 우선시하고 있어, 청년들은 경험을 쌓을 기회조차 얻기 어려운 상황입니다. <br>
 이에 청년에게는 실무 경험을, 기업에는 단기 공백 해소 인력을 연결할 수 있는 플랫폼이 필요하다고 생각했습니다.
+
+<img width="587" height="324" alt="기획배경" src="https://github.com/user-attachments/assets/b02aca83-ed03-4f0f-8cc3-a252743e57ef" />
+
+<br>
 
 ## ✨ 프로젝트 목적
 
@@ -26,6 +36,8 @@ KOK은 기업의 단기 공백(휴가, 연차, 출장 등)으로 생긴 빈자�
 
 4. **역할별 맞춤 서비스**: 일반 회원, 기업 회원, 관리자 각각에 맞는 기능을 제공합니다.
 
+<br>
+
 ## ✨ 기대 효과
 
 1. **체험공고**: 다양한 직무를 직접 경험하며, 책이나 강의로는 얻기 어려운 실무 감각을 쌓을 수 있습니다.
@@ -33,6 +45,10 @@ KOK은 기업의 단기 공백(휴가, 연차, 출장 등)으로 생긴 빈자�
 2. **인턴공고**: 짧은 체험 경험이 채용으로 자연스럽게 이어지는 기회의 흐름을 제공합니다.
 
 3. **커뮤니티**: 경험을 공유하고 연결하며 새로운 기회와 배움을 만들어가는 장을 제공합니다.
+
+<img width="612" height="325" alt="기대효과" src="https://github.com/user-attachments/assets/a8168463-aa4b-42ed-acb1-4e5ea8ac962b" />
+
+<br>
 
 ## 🛠️ 개발 환경
 
@@ -193,6 +209,11 @@ KOK은 기업의 단기 공백(휴가, 연차, 출장 등)으로 생긴 빈자�
 
 #### 🎯 진척도
 <img width="782" height="171" alt="서버진척도" src="https://github.com/user-attachments/assets/3e68375a-65b7-4a5f-a19d-bfa45e57c3ef" />
+
+<br>
+
+#### 🗄️ ERD
+<img width="8346" height="6562" alt="diagram" src="https://github.com/user-attachments/assets/aa5ba920-e272-40c3-a987-c2613ac0aaf8" />
 
 <br>
 
