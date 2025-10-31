@@ -103,7 +103,7 @@ KOK은 단순한 구인·구직 플랫폼이 아니라,
 
 ## 📌 담당 업무
 
-### <a href="https://github.com/user-attachments/assets/b2258dea-cc14-4f09-b1fd-3fc8844ae77a" target="_blank">⚙️ Front-End</a>
+### ⚙️ Front-End
 
 #### 🔍 메인 페이지
 
@@ -140,7 +140,7 @@ KOK은 단순한 구인·구직 플랫폼이 아니라,
 
 <br>
 
-### <a href="https://github.com/user-attachments/files/23253468/Flow_Chart.pdf" target="_blank">⚙️ Back-End</a>
+### ⚙️ Back-End
 
 #### 🔍 커뮤니티 페이지: 게시글 목록
 
