@@ -18,7 +18,7 @@
 //    @Autowired
 //    CompanyService companyService;
 //
-////    mapperTests
+//    //    mapperTests
 //    @Test
 //    public void selectCompanyById() {
 //        log.info("selectCompanyById: {}", companyMapper.selectCompany(6L));
@@ -35,7 +35,7 @@
 //        log.info("countCompany: {}", companyMapper.selectCompanyCount(""));
 //    }
 //
-////    DaoTests
+//    //    DaoTests
 //    @Test
 //    public void selectCompanyByIdDAOTests() {
 //        log.info("selectCompanyById: {}", companyDAO.selectCompany(6L));

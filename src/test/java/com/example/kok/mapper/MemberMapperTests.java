@@ -49,7 +49,7 @@
 //        log.info("selectMembers: {}", memberService.findUserMembers(1, ""));
 //    }
 //
-////    목록 개수 조회
+//    //    목록 개수 조회
 //    @Test
 //    public void countMembersTest(){
 //        memberMapper.selectCount("차");
@@ -62,7 +62,7 @@
 //        log.info("개수 :{}", memberDAO.countMembers(""));
 //    }
 //
-////    아이디로 회원 조회
+//    //    아이디로 회원 조회
 //    @Test
 //    public void selectMemberTest(){
 //        Optional<UserMemberDTO> memberDTOs = memberMapper.selectMember(1L);
