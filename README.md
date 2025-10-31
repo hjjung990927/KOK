@@ -18,19 +18,19 @@ KOK은 기업의 단기 공백(휴가, 연차, 출장 등)으로 생긴 빈자�
 
 ## ✨ 기획배경
 
-요즘 20대에게 ‘취업’은 단순히 일자리를 얻는 게 아니라, 스스로 어떤 일을 잘할 수 있고, 어떤 직무가 나에게 맞는지를 찾아가는 과정이 되었다 생각합니다. 
+요즘 20대에게 ‘취업’은 단순히 일자리를 얻는 게 아니라, 스스로 어떤 일을 잘할 수 있고, 어떤 직무가 나에게 맞는지를 찾아가는 과정이 되었다 생각합니다.
 
 하지만 현실은 실무 경험을 쌓을 기회가 많지 않아, “경험이 없으니 지원하기 어렵고, 지원하지 않으면 경험을 쌓을 수 없는” 문제에 놓여 있는 20대들이 많습니다.
 
-저 역시 같은 고민을 겪으며, 지식이 아닌 **진짜 경험을 통해 배우는 플랫폼**이 필요하다고 느꼈습니다. 
+저 역시 같은 고민을 겪으며, 지식이 아닌 **진짜 경험을 통해 배우는 플랫폼**이 필요하다고 느꼈습니다.
 
-그래서 저희 팀은 기업의 단기 공백을 청년들의 도전 기회로 바꾸는 플랫폼 **KOK(콕)** 을 기획했습니다. 
+그래서 저희 팀은 기업의 단기 공백을 청년들의 도전 기회로 바꾸는 플랫폼 **KOK(콕)** 을 기획했습니다.
 
-**KOK(콕)** 은 **체험 일자리에 콕 들어간다**는 의미를 담고 있습니다. 
+**KOK(콕)** 은 **체험 일자리에 콕 들어간다**는 의미를 담고 있습니다.
 
 청년이 직접 기업의 자리 속으로 **콕** 들어가 실무를 체험하고, 자신이 원하는 직무를 실제로 느껴보며, 그 과정에서 자신감과 방향성을 찾을 수 있도록 설계했습니다.
 
-KOK은 단순한 구인·구직 플랫폼이 아니라, 
+KOK은 단순한 구인·구직 플랫폼이 아니라,
 - 실무를 통해 배우고 성장하며,
 - 커뮤니티에서 경험을 나누고,
 - 새로운 도전을 통해 용기와 가능성을 확장하는 **경험 중심 성장 플랫폼**입니다.
@@ -235,28 +235,60 @@ KOK은 단순한 구인·구직 플랫폼이 아니라,
 
 <br>
 
-## 🚨 프로젝트 진행 중 오류
-#### 📢 오류 원인: AWS S3 Presigner 호출 시 key 값이 null
-<img width="1168" height="314" alt="S3에서 불러오기 실패" src="https://github.com/user-attachments/assets/9364afef-021d-41da-ad8c-effcb76f3a00" />
+## 🚨 오류 사항과 해결 방안
+### **📌 1. ERD의 흐름을 정확히 파악하자**
 
-#### ✅ 해결 방법
+#### **💥문제 상황**
+-  AWS S3 Presigner 호출 시 key 값이 null로 확인
+   <img width="1168" height="314" alt="S3에서 불러오기 실패" src="https://github.com/user-attachments/assets/9364afef-021d-41da-ad8c-effcb76f3a00" />
+
+#### **🔍문제 원인**
+
+-   파일 업로드 과정에서 PostFileDTO에는 값이 들어가고 있었으나, FileDTO에는 데이터가 저장되지 않아 S3 Key가 null로 반환되는 문제가 발생했습니다.
+
+#### **✅ 해결 방안**
 <img width="616" height="572" alt="image" src="https://github.com/user-attachments/assets/ece1b3b8-2ee2-466b-a854-11dfd97fed58" />
+
 <br>
 
-파일 업로드 과정에서 PostFileDTO에는 값이 들어가고 있었으나, **FileDTO에는 데이터가 저장되지 않아 S3 Key가 null로 반환**되는 문제가 발생했습니다. <br>
-이를 해결하기 위해 파일 업로드 로직에 **FileDTO 저장 처리를 추가**하고 이후 **PostFileDTO와 매핑**하도록 수정하여 조회 시 정상적으로 `Presigned URL` 을 생성할 수 있도록 개선했습니다.
+-   파일 업로드 로직에 **FileDTO 저장 처리를 추가**하고 이후 **PostFileDTO와 매핑**하도록 수정하여 조회 시 정상적으로 `Presigned URL` 을 생성할 수 있도록 개선했습니다.
 
-#### 📢 오류 원인: 게시글 상세  좋아요 수와 게시글 목록 좋아요 수 불일치
-<img width="2561" height="1398" alt="localhost_10000_community_page" src="https://github.com/user-attachments/assets/0b1fdfa1-4634-4db7-8b36-3f74e95a8037" />
-<img width="2561" height="1398" alt="localhost_10000_community_page (1)" src="https://github.com/user-attachments/assets/43dd2a92-3b13-48eb-9936-1555bd888fa6" />
+### **📌 2. 캐싱 유지 및 무효화 처리를 신경쓰자**
 
+#### **💥문제 상황**
+-  게시글 상세 좋아요 수와 게시글 목록 좋아요 수가 불일치하는 오류 발생
+   <img width="2561" height="1398" alt="localhost_10000_community_page" src="https://github.com/user-attachments/assets/0b1fdfa1-4634-4db7-8b36-3f74e95a8037" />
+   <img width="2561" height="1398" alt="localhost_10000_community_page (1)" src="https://github.com/user-attachments/assets/43dd2a92-3b13-48eb-9936-1555bd888fa6" />
 
-#### ✅ 해결 방법
+#### **🔍문제 원인**
+
+-   게시글 상세 조회 시 캐싱해 조회 성능을 개선했으나 좋아요/좋아요 취소 기능에는 **캐시 무효화 처리가 없었습니다**.
+
+#### **✅ 해결 방안**
 <img width="445" height="238" alt="image" src="https://github.com/user-attachments/assets/2497a4f0-f618-4bef-8dc1-2600d241186a" />
+
 <br>
 
-`(@Cacheable)`로 상세 조회 데이터를 캐싱하여 조회 성능을 개선했으나 좋아요/좋아요 취소 기능에는 **캐시 무효화 처리가 없었습니다**. <br> 
-이를 해결하기 위해 좋아요 변경 시 **캐시 삭제하도록 `(@CacheEvict)`를 적용**해 해결했습니다.
+-  `(@Cacheable)`로 상세 조회 데이터를 캐싱하여 조회 성능을 개선했으나 좋아요/좋아요 취소 기능에는 **캐시 무효화 처리가 없었습니다**. <br>
+   이를 해결하기 위해 좋아요 변경 시 **캐시 삭제하도록 `(@CacheEvict)`를 적용**해 해결했습니다.
+
+### **📌 3. 인가처리를 명확히 하자**
+
+#### **💥문제 상황**
+-   로그인 시 기업 콘솔창으로 이동하기 실패
+    <img width="1186" height="530" alt="기업회원 불러오기 실패" src="https://github.com/user-attachments/assets/15976a29-bd07-447b-b901-28c901cc93e8" />
+
+
+#### **🔍문제 원인**
+
+-   JWT 토큰으로 로그인은 됐지만, Security 설정에서 허용되지 않아 접근하려는 URL의 **권한이 맞지 않았습니다.**
+
+#### **✅ 해결 방안**
+<img width="687" height="521" alt="인가처리" src="https://github.com/user-attachments/assets/2110c68e-9a51-49ed-9b79-c9d06c623619" />
+
+-  Spring Security의 authorizeHttpRequests 설정에서 "/enterprise-console/**" 경로에 **hasRole(UserRole.COMPANY.name()) 권한을 부여**하여, 기업 회원만 해당 경로에 접근할 수 있도록 접근 제어 문제를 해결했습니다.
+
+<br>
 
 ## ✍️ 총평
 #### ⏳ 어려웠던 부분
@@ -289,7 +321,7 @@ Presigned URL의 접근 방을 조절하며 보안과 편의성을 균형 있게
 #### ✨ 느낀 점
 이번 프로젝트를 통해 단순한 CRUD 수준을 넘어 **실제로 서비스가 돌아가기 위한 백엔드 흐름** 을 깊게 이해할 수 있었습니다.  
 `AWS, Security, Cache, Presigned URL, Redis` 등 실전 환경에서 자주 사용되는 기술들을 직접 적용하며,  
-**문제를 피하지 않고 끝까지 해결하는 과정이 개발자의 기본 역량이라는 것**을 체감했습니다.  
+**문제를 피하지 않고 끝까지 해결하는 과정이 개발자의 기본 역량이라는 것**을 체감했습니다.
 
 특히 서비스는 단순히 기능이 동작하는 것만으로는 충분하지 않으며  
 **데이터 무결성과 정합성, 보안 등 여러 가지를 고려해야 진짜 서비스가 된다**는 것을 배웠습니다.  
