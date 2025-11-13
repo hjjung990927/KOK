@@ -7,9 +7,9 @@
 |`일반회원 계정`| test@test.com | 1234 | http://hikok.store |
 |`기업회원 계정`| company@test.com | 1234 | http://hikok.store |
 |`관리자 계정`| admin@test.com | 1234 | http://hikok.store/admin/login |
-
-   재접속 중 오류 시 관리자모드(F12)의 Application 내에 Cookies를 지워주시면 감사하겠습니다.
-
+```
+재접속 중 오류 시 관리자모드(F12)의 Application 내에 Cookies를 지워주시면 감사하겠습니다.
+```
 ## 🖥️ 프로젝트 소개
 
 KOK은 기업의 단기 공백(휴가, 연차, 출장 등)으로 생긴 빈자리를 직접 체험해볼 수 있는 실무 체험 플랫폼입니다. <br>
