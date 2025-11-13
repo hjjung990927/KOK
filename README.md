@@ -8,7 +8,7 @@
 |`기업회원 계정`| company@test.com | 1234 | http://hikok.store |
 |`관리자 계정`| admin@test.com | 1234 | http://hikok.store/admin/login |
 ```
-재접속 중 오류 시 관리자모드(F12)의 Application 내에 Cookies를 지워주시면 감사하겠습니다.
+재접속 중 오류 시 관리자모드(F12) Application 내에 URL의 Cookies를 지워주시면 감사하겠습니다.
 ```
 ## 🖥️ 프로젝트 소개
 
