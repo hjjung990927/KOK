@@ -1,11 +1,12 @@
 # KOK |<a> 경험 중심 체험 플랫폼 </a>
 
 ## ➡️ 홈페이지 들어가기
-
+#### 오픈시간 (오전 10시 ~ 오후 10시)
 | 테스트 계정 | 아이디 | 비밀번호 | 페이지 링크 |
 |------|--------|--------|--------|
-|`test`| test@test.com | 1234 | http://hikok.store |
-|`관리자`| admin@test.com | 1234 | http://hikok.store/admin/login |
+|`일반회원 계정`| test@test.com | 1234 | http://hikok.store |
+|`기업회원 계정`| company@test.com | 1234 | http://hikok.store |
+|`관리자 계정`| admin@test.com | 1234 | http://hikok.store/admin/login |
 
 
 ## 🖥️ 프로젝트 소개
